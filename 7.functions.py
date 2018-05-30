@@ -19,3 +19,23 @@ def sum2(n1, n2):
   return int(n1) + int(n2)
 
 print(sum3(1.5, "2", 3))
+
+def foo(first, second, third, *therest):
+  print("First: %s" % first)
+  print("Second: %s" % second)
+  print("Third: %s" % third)
+  print("And all the rest... %s" % list(therest))
+
+#foo(1,2)       This will fail
+foo(1,2,3)
+foo(1,2,3,4)
+foo(1,2,3,4,5)
+
+def calculate(n1, n2, **action):
+  if action.get("operator") == "+":
+    return n1 + n2 
+  elif action.get("operator") == "*":
+    return n1 * n2
+
+print(calculate(7, 10, operator = "+"))
+print(calculate(7, 10, operator = "*"))
